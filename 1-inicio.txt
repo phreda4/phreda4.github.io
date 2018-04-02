@@ -1,0 +1,252 @@
+Hola
+*****
+
+TODO, dentro de la computadora, es un numero.
+Aunque la computadora funciona solo con numeros,
+existen formas de convertir estos numeros en:
+
+letras, mediante el codigo ASCII
+
+65 --> "A"
+66 --> "B"
+etc.
+
+imagenes, dividiendo la imagen en puntos (pixeles) y haciendo corresponder un numero a una intesidad de color
+
+255,0,0 color rojo
+0,255,0 color verde
+0,0,0 color negro
+255,255,255 color blanco
+etc.
+
+sonidos, mediante el registro de la forma de onda del sonido
+en definitiva es una secuencia de numeros
+
+*****
+
+La computadora hace dos cosas con estos numeros
+
+Puede Almacenar y Recordar estos numeros en su Memoria:
+La analogia mas precisa es un cajon donde guardo un numero que puede leido en otro momento
+
+Puede realizar calculos con numeros:
+Se refiere a realizar calculos matematicos, suma, resta, etc.. con estos numeros.
+Estos calculos estan en secuencia, uno detras de otro y esta secuencia puede repetirse o saltearse segun condiciones.
+
+Estas acciones seran realizadas o ejecutadas por la computadora cuando le demos las ORDENES para hacerlas.
+Estas ordenes o acciones en secuencia seran el codigo de nuestro programa.
+
+en resumen, definiremos
+#DATOS y :ACCIONES
+que constituyen el codigo a ejecutarse por la computadora
+
+*****
+
+El principal objetivo del lenguaje es facilitar la programacion.
+Este lenguaje sera traducido al verdadero codigo que utiliza la computadora para funcionar.
+
+Utilizaremos PALABRAS como base del lenguaje.
+definimos una palabra como un conjunto de caracteres separados por espacio
+ejemplo
+	POSICION	CORRER
+y tambien
+	=SALUDOS?   +
+pero
+	23			4.3
+aunque son palabras, tambien son numeros validos.
+
+El lenguaje posee un DICCIONARIO, donde se encuentran definidas palabras con acciones determinadas,
+por ejemplo
+
+la palabra "+" sumara dos numeros
+la palabra "@" obtendra un numero que esta en la memoria
+
+Las palabras que son numeros no estan en el diccionario pero tienen una accion definida:
+son apiladas en una memoria llamada PILA DE DATOS
+
+Tambien utilizaremos PREFIJOS para indicar diferentes acciones.
+por ejemplo el prefijo $ define numero en base 16, asi
+$ff es el numero 255 en base 10, por lo tanto sera apilado
+
+*****
+
+Las palabras que definiran el programa se ejecutaran en orden
+por ejemplo
+2 2 +
+apilara el 2 luego apilara otro 2 y luego sumara estos numeros.
+
+Cada palabra que esta en el codigo y no sea un numero sera buscada en el diccionario,
+si no se encuentra significa que es programa esta mal escrito.
+
+TODA palabra debe estar definida antes de usarse.
+
+podemos definir palabras con los dos prefijos mas importantes
+
+#DATO
+define la palabra DATO como una lugar de memoria, tambien llamado variable DATO
+
+:ACCION
+define la palabra ACCION como un conjunto de acciones a ejecutar
+
+El prefijo ":" solo define el punto de partida del programa, aqui comienza la ejecucion:
+La palabra ; define el final de una definicion o el final del programa.
+Entonces el ejemplo completo queda
+
+: 2 2 + ;
+
+*****
+
+El programa sera un conjunto de definiciones de datos y acciones y al final estara el punto de inicio del programa
+
+|--------------------
+#puntos
+
+:sumar	1 'puntos +! ;
+
+: sumar sumar ;
+|--------------------
+
+Primero definimos la variable "puntos", inicialmente contendra un 0.
+
+Luego definimos la palabra "sumar", lo que va a hacer sumar es ejecutar las siguientes palabras hasta encontrar un ";"
+En este caso sera
+1		que apilara el numero 1
+'puntos utilizando el prefijo "'" apila la direccion de la variable "puntos"
++!		suma 1 a la variable puntos
+;		fin de definicion y palabra
+
+Al final del programa esta el punto de inicio, que aqui repite dos veces la palabra sumar y luego finaliza el programa.
+La idea de este codigo es sumar dos veces el numero 1 a la variable puntos,
+al final de la ejecucion "puntos" contendra el numero 2.
+
+*****
+
+La Pila de Datos.
+
+Las acciones seran operaciones sobre numeros, tomando y dejando numeros de la memoria.
+La pila de datos se puede ver como una memoria de corto plazo, para calcular o para pasar estos datos entre palabras.
+
+Parte del trabajo de hacer un programa es planear que ocurre en esta pila.
+
+Tenemos palabras para reordenar la pila, para agregar numero y para quitar.
+
+Ya vimos que un numero es apilado cuando se ejecuta.
+
+Podemos tambien agregar valores a la pila de datos
+duplicando el tope con DUP
+o el segundo con OVER
+o el tercero,cuarto,quinto
+con PICK2,PICK3,PICK4
+Aqui nos detenemos, en el caso que se necesite copiar un valor mas profundo en la pila,
+es una indicacion que nuestro codigo esta innecesariamente complicado, seguramente hay una forma mas facil de hacer lo mismo.
+Hay muchos indicadores mas de esto pero el orden de la pila es el principal..
+
+Notar que estamos copiando el valor.. es como decir..
+haremos algo con este numero pero necesitamos el valor original tambien..
+
+Podemos borrar elementos de la pila con DROP o NIP
+
+Podemos cambiar el orden de los elementos con SWAP o ROT
+
+Ordenar la pila para que los calculos fluyan sin muchas palabras de pila.
+
+****
+
+Todas las operaciones aritmeticas y logicas se realizaran sobre los numeros que se encuentran en la pila
+las palabra
++,-,*,/,MOD,AND,OR,XOR
+toman los dos numeros al tope de la pila y apilan el resultado
+Tambien tenemos operaciones como
+NOT,NEG,ABS que modifican solo el tope de la pila
+
+
+****
+
+Estructuras de control
+Son las partes del codigo que se ejecutan en una determinada condicion o que se repiten.
+Estas partes de codigo la llamaremos bloques y las delimitaremos con parentesis
+Utilizando ademas la plabra )( para indicar el final de un bloque y el principio de otro.
+
+Las palabras condicionales van a comprobar el tope de la pila o los dos primeros numeros
+completando el funcionamiento de estas estructuras de control
+
+Los condicionales simples son
+0?
+1?
++?
+-?
+Los condicionales compuestos son
+<?
+>?
+<=?
+>=?
+<>?
+AND?
+
+Estos condicionales deben estar pegados a los bloques
+IF, IF ELSE
+Ejecuta el bloque si se cumple la condicion
+Ejecuta el bloque A si se cumple la condicion o el bloque B sino se cumple
+menor a 5 o mayor a 8 o ninguno
+
+5 <? ( "menor a 5" print
+	)( 8 >? ( "mayor a 8" print
+		)( "ninguno" print ) )
+
+utilizar el corte de palabra para terminar la ejecucion
+
+5 <? ( "menor a 5" print ; )
+8 >? ( "mayor a 8" print ; )
+"ninguno" print
+
+WHILE
+repite el bloque mientras se cumpla la condicion
+contar de 0 a 9
+0 ( 10 <? )( 1+ ) drop
+
+contar de 10 a 1
+10 ( 1? )( 1- ) drop
+
+recorrer una cadena terminada en 0
+( c@+ 1? )(
+	emit ) drop
+
+UNTIL
+Repite el bloque hasta que se cumple la condicion
+Aunque menos frecuente esta
+10 ( 1- 0? )
+
+REPEAT
+Repite siempre
+( )
+
+****
+
+Variables y Memoria
+
+Como vimos, el programa esta compuesto por DATO + ACCION
+
+Hacerca de los datos
+Podemos definir memoria para guardar datos de 3 maneras distinta.
+- Definiendo variables
+#posicion 3
+#lista 1 2 3 4 0
+- Definiendo bloques de memoria
+#dibujo )( $ffff
+- Utillizando la memoria libre
+mem 'iniciomemoria !
+
+La palabras principales para utilizar la memoria son
+fetch
+@ | direccion -- valor
+
+toma de la pila una direccion en la memoria, obtiene el valor que se encuentra alli y lo apila
+y store
+! | valor direccion --
+guarda en la direccion el valor que esta el la pila
+
+
+
+
+
+
