@@ -1,0 +1,76 @@
+Sprites vectoriales.
+Estas palabras son las primeras que agregue al sistema.
+Utiliza 4 variables globales definidas en lib/gc.txt
+|
+| cursor centro (xc,yc) ancho (w) alto (h)
+|
+#:xc	| centro x
+#:yc	| centro y
+#:w		| width
+#:h		| heigth
+
+asignar valores a estas variables va a modificar el dibujo del sprite.
+la conversion del x e y de cada punto esta definido en lib/convert.txt
+
+|--- sprite en 32 bits, ajustado por gc
+| fuente vectorial en 32bits | 14 - 14 - 4
+| 0000 0000 0000 00 | 00 0000 0000 0000 | 0000
+| x					y			      control
+
+::gc>xy | v -- x y
+	dup  18 >> w 14 *>> xc + swap 14 << 18 >> h 14 *>> yc + ;
+::xy>gc | x y -- v
+	yc - h 14 <</ $3fff and 4 << swap xc - w  14 <</ $3fff and 18 << or ;
+
+El sprite esta definido en la memoria como un arreglo de numeros (32bits) terminados en 0.
+El dibujo lo realiza la palabra en lib/sprite.txt
+
+#nspaedit a0 a1 a2 a3 a4 a5 a6 a7 a8 a9 aa ab ac ad ae af
+
+::nsprite | adr --
+  ( @+ 1? )( dup $f and 2 << 'nspaedit + @ exec ) 2drop sfill ;
+
+Lo que hace esto es bien simple, toma los 4 bits inferiores y lo utiliza para obtener la direccion
+del codigo a executar.
+Como nota se puede decir que curiosamente el BASIC utiliza esta estructura de control,
+el famoso ON GOTO o ON GOSUB, el PEEK (@) y POKE (!) tambien estaban presentes.
+La idea es transformar un numero (en este caso una parte del numero) en una accion.
+Las palabras a0..af
+
+:a0  drop ; | el valor no puede ser 0
+:a1  gc>xy op ;  | punto
+:a2  gc>xy 'ycc ! 'xcc ! ; | cp
+:a3  gc>xy pline ; | linea
+:a4  gc>xy xcc ycc pcurve ;  | curva
+:a5  gc>xy line ;
+:a6  gc>xy xcc ycc curve ;
+
+:a7  gc>xy 2dup 'ycen !+ ! fcen ; | centro degrade
+:a8  gc>xy xcen rot - ycen rot -
+	  over dup * over dup * + 0? ( 1 nip ) >r | gracias IQ
+	  swap neg r 16 <</
+	  swap r> 16 <</ fmat ;
+
+:a9  gc>xy xcc ycc pcurve ; | e .. 9
+:aa  gc>xy pline ;  | f .. a
+:ab  4 >> ink ; |drop ; |>xy point ;
+:ac  4 >> 'c1 ! ;  | segundo color | c .. c
+:ad  4 >> ink sfill poli ;		| 9 .. d
+:ae  4 >> c1 fcol lfill poli ;	| a .. e
+:af  4 >> c1 fcol rfill poli ;	| b ..  f
+
+asi, la memoria
+#sprite1 $00000001 $00040015 0
+es un op en 0,0 y un line en 1,1
+
+Las variables xcc,ycc son auxiliares para dibujar curvas, xcen,ycen son para el centro del degrade, c1 para el segundo color.
+El comentario gracias IQ viene de una consulta que le hice a Iñigo Quilez de como obtener la matriz de transformacion para el degrade.
+Una contra que tienen estos sprites es que dibuja cada poligono, sobreescribiendo los pixeles que se superponen.
+La forma de evitar esto sin cambiar la forma de almacenar estos graficos es meterse adentro de la definicion de poligono y
+retrasar el dibujo hasta que se terminen los poligonos a dibujar, y modificar el dibujo linea a linea.
+Tendria que definir unas palabras como multi poligonos, quiza algun dia aparezcan !!
+sfill lfiil rfill y tfill (que aqui no se utiliza) son los que ponen el llenado de poligonos en SOLIDO, LINEAL, RADIAL y TEXTURA.
+Mi idea era imita la forma de dibujo del FLASH, muy de moda cuando programe estas definiciones.
+
+La version actual convive con una version anterior (sprites.txt), de forma similar pero sin llenado con degrade.
+No lo quite porque hay programas que la utilizan.
