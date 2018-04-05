@@ -1,4 +1,5 @@
-#Word List
+Main Dicctionary.
+The Language start with this words defined, in top of this you can define new word until the system is done.
 
 Stack Manipulation Words
 ```

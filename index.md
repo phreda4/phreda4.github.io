@@ -14,4 +14,15 @@ Any word (characters separate by spaces) search in dicctionary,
 Unlike ColorForth, the meaning of words is defined by prefixes.
 the most importan is ' (adressof) then *word* execute a word, and *'word* is the adress of word.
 
+For make a program you need define yours words.
+
+A program have two types of words, actions and data, time and space. For define an action :r4 use the prefix : and to define data the prefix #
+
+'''
+:thiswordisanaction
+	1 2 3 + * ;
+	
+#thisisdata 33
+'''
+
 [main diccionary](doc/main-dicc.md)
