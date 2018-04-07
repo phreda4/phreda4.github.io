@@ -18,11 +18,16 @@ For make a program you need define yours words.
 
 A program have two types of words, actions and data, time and space. For define an action :r4 use the prefix : and to define data the prefix #
 
-'''
+```
 :thiswordisanaction
 	1 2 3 + * ;
-	
-#thisisdata 33
-'''
 
-[main diccionary](doc/main-dicc.md)
+#thisisdata 33
+```
+
+When you define a word, only you can use a word previous defined, or current definition for recursive words.
+
+When start a program, the diccionary have basic definitions:
+
+[Main Diccionary](doc/main-dicc.md)
+
