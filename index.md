@@ -31,3 +31,12 @@ When start a program, the diccionary have basic definitions:
 
 [Main Diccionary](doc/main-dicc.md)
 
+The main diccionary has a basic interaction with the OS, 12 words, very basic. This aproach has some advantages over recreate all the API calls.
+
+* Not deal with deprecate and diferent behavior in versions.
+* Is easy port to other OS or embebed in a boot image. No OS !
+* The compiler only need code this 12 words for comunicate with the OS.
+
+The cons is not have full access to hard, for now!.
+
+Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedded,but the idea is avoid this and in some point, recreate in :r4
