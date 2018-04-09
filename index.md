@@ -19,8 +19,7 @@ For make a program you need define yours words.
 A program have two types of words, actions and data, time and space. For define an action :r4 use the prefix : and to define data the prefix #
 
 ```
-:thiswordisanaction
-	1 2 3 + * ;
+:thiswordisanaction 1 2 3 + * ;
 
 #thisisdata 33
 ```
@@ -40,3 +39,13 @@ The main diccionary has a basic interaction with the OS, 12 words, very basic. T
 The cons is not have full access to hard, for now!.
 
 Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedded,but the idea is avoid this and in some point, recreate in :r4
+
+Keep it simple, this is the main path, but simple is not easy, is a search in the world of problem for extract or ideate a correct and basic solution.
+
+The current development is dominated by certain ideas that in my opinion are wrong.
+
+The idea of using complex structures to simplify development only makes the problem worse. In addition to hiding certain parts of the problem that should be exposed to see the solution correctly.
+
+The idea of defensive programming by calling a lawyer and making it clear that it can be done and not done, even before writing a single calculation, now instead of having an algorithm, we have an algorithm and a lawyer.
+
+Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a problem, not a different set of problems.
