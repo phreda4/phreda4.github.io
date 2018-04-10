@@ -48,4 +48,7 @@ The idea of using complex structures to simplify development only makes the prob
 
 The idea of defensive programming by calling a lawyer and making it clear that it can be done and not done, even before writing a single calculation, now instead of having an algorithm, we have an algorithm and a lawyer.
 
-Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a problem, not a different set of problems.
+Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a unique problem, not a different set of problems.
+
+1.The Basics (like other forth, but not STATE,not CREATE DOES> and some minors diferences).
+2.[The Main Loop](doc/2-mainloop.md)
