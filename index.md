@@ -54,4 +54,6 @@ Many good programming practices are wrong, since you try to find a generality in
 
 2.[The Main Loop](doc/2-mainloop.md)
 
-3.[Vectors for all](doc/3-vectors.md)
+3.[Vectors Graphics](doc/3-vectors.md)
+
+4.[Animation](doc/4-animation.md)
