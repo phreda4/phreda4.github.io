@@ -57,3 +57,5 @@ Many good programming practices are wrong, since you try to find a generality in
 3.[Vectors Graphics](doc/3-vectors.md)
 
 4.[Animation](doc/4-animation.md)
+
+5.[Memory](doc/5-memory.md)

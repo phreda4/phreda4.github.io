@@ -55,7 +55,7 @@ Now we have a basic program for move a sprite with the keyboard. Some notes:
 
 We use fixed point number, this be usefull here for the position and the velocity, here the key are the word FPOS, this make a calulation with the real screen size and convert the fixed point coordinate to integer position.
 
-We modify with keys the velocity and then add to position, this are for smooth moves of sprite, you see how when press UP the velocity is set and when release UP the velocity are reset, this admit diagonal moves too.
+We modify with keys the velocity and then add to position, this are for smooth moves of sprite, you see how when press UP the velocity is set and when release UP the velocity are reset, this admit diagonal moves too. See the DUP when reset the vars, this duplicate the adress of an action!, not need define this word.
 
 When draw the sprite use qdim, the size of sprite are 64 pixels, change this for diferenct sizes.
 
