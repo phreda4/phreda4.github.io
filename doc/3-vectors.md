@@ -5,8 +5,8 @@
 First to all, :r4 not have console, only a framebuffer, the words for use are
 
 ```
-SW 		| -- w		Screen Width
-SH 		| -- h		Screen height
+SW 	| -- w		Screen Width
+SH 	| -- h		Screen height
 FRAMEV	| -- m		framebuffer memory
 REDRAW  | --		copy framebuffer to read screen
 ```
@@ -84,11 +84,11 @@ a4 is the op, then decode the 2 coordinate from the 32 bit integers and use OP f
 ```
 | 14 - 14 - 4
 | 0000 0000 0000 00 | 00 0000 0000 0000 | 0000
-| x					y			      control
+| x                   y                   control
 ```
 
 this is 14 bits for x coord, 14 bits for y coord and 4 bits for control, the jump table. this is how store the info of every point.
-You see too how trace the last PLINE with a xp,yp saved for close the polygons.
+You see too how trace the last `PLINE` with a xp,yp saved for close the polygons.
 a5 make a pline, a6 make a curve, etc.
 then a files who store this sprites are .vsp, some others definitions are used, the old ones, like .spr
 
@@ -102,7 +102,7 @@ and hit CRTL-E in the editor and see what happen.
 
 ## Where draw
 
-The coordinates of the sprites are calculated with the center in xc,yc and w and h for width and height, this variables control the position and scale of the draw. There are many words for controling this like POS or DIM or QDIM, this only set this variables.
+The coordinates of the sprites are calculated with the center in xc,yc and w and h for width and height, this variables control the position and scale of the draw. There are many words for controling this like `POS` or `DIM` or `QDIM`, this only set this variables.
 
 Another word of sprite drawing use the coordinates with a rotation and simply make turn the draw.
 Another use 3d perspective calculation and then the sprite is in 3d too!
