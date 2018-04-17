@@ -50,7 +50,7 @@ The idea of defensive programming by calling a lawyer and making it clear that i
 
 Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a unique problem, not a different set of problems.
 
-1.The Basics (like other forth, but not STATE,not CREATE DOES> and some minors diferences).
+1.[The Basics](doc/1-basics.md) 
 
 2.[The Main Loop](doc/2-mainloop.md)
 
