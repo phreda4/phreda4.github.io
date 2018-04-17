@@ -38,3 +38,32 @@ Then we have a library for use the memory (lib/mem.txt), in this lib define the 
 `here` is the start of free mem, see in mark word, if `here` is 0 (when start) the set to `mem` and stack in `memmap`.
 then if you use this schema, start the program with `mark`, for initialice this var.
 
+A difference with Forth in: r4 the compilation is not controlled, that is, instead of Edit-Compile-Execute time, we only have Edit-Execute time, the idea is to simplify. here is a variable inherited `here` but it has another meaning, in ColorForth it indicates the lungar where this code is compiler, here is the place of free memory for any use.
+
+See lib/mprint.txt library.
+
+```
+::, here !+ 'here ! ;
+::,c here c!+ 'here ! ;
+::,s here swap ( c@+ 1? )( rot c!+ swap ) 2drop 'here ! ;
+::,w here swap ( c@+ $ff and 32 >? )( rot c!+ swap ) 2drop 'here ! ;
+
+...
+
+```
+
+You can see how write in adress of here. The idea is use the mem like scratch pad
+
+The Word savemem make a really usefull thing, save from mark to actual here, you can save a string in file simply:
+
+```
+:savethis
+	mark
+	"hola" ,s
+	123 ,d
+	dup "stack now %d" ,print
+	,cr
+	"file.txt" savemem
+	empty ;
+```
+
