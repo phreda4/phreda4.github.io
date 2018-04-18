@@ -32,11 +32,11 @@ and before this definition add
 #xv #yv	 | velocity
 
 :keyboard
-	[ -0.05 'yv ! ; ] <up>
-	[ 0.05 'yv ! ; ] <dn>
+	[ 0.01 'yv ! ; ] <up>
+	[ -0.01 'yv ! ; ] <dn>
 	[ 0 'yv ! ; ] dup >dn< >up<
-	[ -0.05 'xv ! ; ] <le>
-	[ 0.05 'xv ! ; ] <ri>
+	[ -0.01 'xv ! ; ] <le>
+	[ 0.01 'xv ! ; ] <ri>
 	[ 0 'xv ! ; ] dup >le< >ri<
 	'exit >esc<
 	;

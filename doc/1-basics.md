@@ -38,7 +38,9 @@ These actions will be performed or executed by the computer when we give you the
 These orders or actions in sequence will be the code of our program.
 
 in summary, we will define
-#DATA and: ACTIONS
+
+#DATA and :ACTIONS
+
 that constitute the code to be executed by the computer
 
 The main objective of the language is to facilitate programming.
@@ -47,25 +49,34 @@ This language will be translated into the real code that the computer uses to fu
 We will use WORDS as the basis of language.
 we define a word as a set of characters separated by space
 example
+```
 POSITION TO RUN
+```
+
 and also
+```
 = GREETINGS? +
+```
+
 but
+```
 23 4.3
+```
+
 although they are words, they are also valid numbers.
 
 The language has a DICTIONARY, where words are defined with specific actions,
 for example
 
-the word "+" will add two numbers
-the word "@" will get a number that is in the memory
+the word `+` will add two numbers.
+
+the word `@` will get a number that is in the memory.
 
 Words that are numbers are not in the dictionary but have a defined action:
-they are stacked in a memory called DATA BATTERY
+they are stacked in a memory called DATA STACK
 
 We will also use PREFIXES to indicate different actions.
-for example the prefix $ defines number in base 16, so
-$ ff is number 255 in base 10, therefore it will be stacked
+for example the prefix $ defines number in base 16, so $ff is number 255 in base 10, therefore it will be stacked.
 
 The words that will define the program will be executed in order
 for example
@@ -104,23 +115,20 @@ The program will be a set of definitions of data and actions and at the end will
 ```
 #points
 
-: add 1 'points +! ;
+:add 1 'points +! ;
 
-add sum;
+add add ;
 ```
 
-First we define the variable "points", initially it will contain a 0.
+First we define the variable `points`, initially it will contain a 0.
 
-Then we define the word "add", what you will add is to execute the following words until you find a ";"
-In this case it will be
-1 that will stack the number 1
-'points using the prefix "'" stacks the address of the variable "points"
-+! add 1 to the variable points
-; end of definition and word
+Then we define the word `add`, what you will add is to execute the following words until you find a `;`
+In this case it will be 1 that will stack the number 1 `'points` using the prefix "'" stacks the address of the variable `points`
+`+!` add 1 to the variable points
+`;` end of definition and word
 
 At the end of the program is the starting point, which here repeats the word add twice and then ends the program.
-The idea of ??this code is to add the number 1 to the variable points twice,
-at the end of the execution "points" will contain the number 2.
+The idea of this code is to add the number 1 to the variable points twice, at the end of the execution `points` will contain the number 2.
 
 # The Data Stack
 
@@ -133,11 +141,11 @@ We have words to reorder the stack, to add numbers and to remove.
 
 We already saw that a number is stacked when it is executed.
 
-We can also add values ??to the data stack
-doubling the top with DUP
-or the second with OVER
+We can also add values to the data stack
+doubling the top with `DUP`
+or the second with `OVER`
 or the third, fourth, fifth
-with PICK2, PICK3, PICK4
+with `PICK2`, `PICK3`, `PICK4`
 Here we stop, in case you need to copy a deeper value in the stack,
 it is an indication that our code is unnecessarily complicated, surely there is an easier way to do the same.
 There are many more indicators of this but the order of the stack is the main one ..
@@ -145,18 +153,18 @@ There are many more indicators of this but the order of the stack is the main on
 Note that we are copying the value .. it's like saying ..
 we will do something with this number but we need the original value too ..
 
-We can delete items from the stack with DROP or PIN
+We can delete items from the stack with `DROP` or `NIP`.
 
-We can change the order of the elements with SWAP or ROT
+We can change the order of the elements with `SWAP` or `ROT`.
 
 Sort the stack so that the calculations flow without many words of stack.
 
 All the arithmetic and logical operations will be performed on the numbers that are in the stack
 the word
-+, -, *, /, MOD, AND, OR, XOR
+`+`, `-`, `*`, `/`, `MOD`, `AND`, `OR`, `XOR`
 take the two numbers at the top of the stack and stack the result
 We also have operations like
-NOT, NEG, ABS that modify only the top of the stack
+`NOT`, `NEG`, `ABS`, `SQRT` that modify only the top of the stack
 
 # Control structures
 
@@ -225,13 +233,13 @@ traverse a string ending in 0
 Repeat the block until the condition is met
 Although less frequent this
 ```
-10 (1- 0?)
+10 ( 1- 0?)
 ```
 
 ## REPEAT
 Repeat forever
 ```
-()
+( loop )
 ```
 
 # Variables and Memory
@@ -251,19 +259,21 @@ We can define memory to save data in 3 different ways.
 #drawing )( $ffff
 ```
 
-- Utillizando the free memory
-Mem 'memory!
+- Using free memory
+```
+Mem 'memory !
+```
 
-The main words to use the memory are
+The main words to use the memory are:
 fetch
 ```
-@ | address - value
+@ | address -- value
 ```
 
 takes from the stack a direction in the memory, obtains the value that is there and stacks it
 and store
 ```
-! | address value -
+! | address value --
 ```
 
 saves in the direction the value that is in the stack
