@@ -233,7 +233,7 @@ traverse a string ending in 0
 Repeat the block until the condition is met
 Although less frequent this
 ```
-10 ( 1- 0?)
+10 ( 1- 0? )
 ```
 
 ## REPEAT

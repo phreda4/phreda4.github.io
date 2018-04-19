@@ -59,3 +59,7 @@ Many good programming practices are wrong, since you try to find a generality in
 4.[Animation](doc/4-animation.md)
 
 5.[Memory](doc/5-memory.md)
+
+6.[Fonts](doc/6-font.md)
+
+7.[GUI](doc/7-gui.md)
