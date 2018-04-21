@@ -68,6 +68,41 @@ Ready for count the 12 lines, and inner, the 8 bits, but last counter I use the 
 
 See I not use limits comprobations, I try to avoid this or make this checks in upper levels, but be warning, if you draw a text with this font ouside the screen... crash!
 
+## More Fonts
+
+There are many other fonts, like lib/fontj.txt, the bitmap font of sinclair microcomputers. Some variable width bitmap fonts, like Arial, Verdana, Lucida, Times and DejaVu is some sizes, all in bitmap form.
+
+The last incarnations are the antialias bitmap monospace font, lib/fontm.txt for draw and you need include the separate romfont, for example:
+
+```
+^r4/lib/fontm.txt
+^inc/fntm/droidsans13.txt
+
+:test
+	'fontdroidsans13 fontm
+	"Hola" print
+	;
+```
+
+And the vector exported form svg font, lib/rfont.txt, with the separate romfont too. Here you can specify size of font!.
+
+```
+^r4/lib/rfont.txt
+^inc/rft/gooddog.rft
+
+:test
+	gooddog 0.2 %s rfont!
+	"Hello Dog!" printc
+	;
+```
+
+Here, the `0.2 %s` is 20% of screen heigth, and then the size is a rotio of screen size. A constant number can be defined.
+
 ## Print
 
 The connection with print is in lib/print.txt, filling vector and vars for draw every char with EMIT or iterate over a string for PRINT, some cursor and selection words are defined here.
+You can change the font and print when you like. Remenber, the vector fonts are scalable, the bitmap font not!.
+
+## Usage
+
+Demo in demos/test-font.txt,
