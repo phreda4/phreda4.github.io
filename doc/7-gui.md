@@ -103,17 +103,18 @@ Example:
 
 :main
 	show clrscr
+		$ff00 ink
 		"form test " print cr cr
 		"name: " print 'name 64 input cr
 		"adress: " print 'adress 64 input cr
 		"integer: " print 'int 200 inputint cr
-		"float: " print 'real 8 2 inputreal cr
-		"memo: " print 'memo 256 4 32 inputm cr
-		cr
+		$ff0000 ink
+		'exit "Exit" sp .btnt
+		cminiflecha
 		'exit >esc< ;
 
 : main ;
 ```
 
-See how you need memory for store every input pad!
+See how you need memory for store every input pad!, `.btnt` has focus control, then with tab and enter you can exit of this screen
 
