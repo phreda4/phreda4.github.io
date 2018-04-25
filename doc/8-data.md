@@ -94,4 +94,4 @@ p.map traverse the array with the correct adress, the draw or test or whatever.
 : main ;
 ```
 
-hit F1 for add a particles!!
+Hit F1 for add a particles!!

@@ -65,3 +65,5 @@ Many good programming practices are wrong, since you try to find a generality in
 7.[GUI](doc/7-gui.md)
 
 8.[Data Structures](doc/8-data.md)
+
+8.[Math](doc/9-math.md)
