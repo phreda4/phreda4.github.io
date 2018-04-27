@@ -66,4 +66,4 @@ Many good programming practices are wrong, since you try to find a generality in
 
 8.[Data Structures](doc/8-data.md)
 
-8.[Math](doc/9-math.md)
+9.[Math](doc/9-math.md)
