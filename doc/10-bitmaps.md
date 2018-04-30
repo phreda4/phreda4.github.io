@@ -5,6 +5,7 @@ In: r4 I am trying to use the memory without having to modify it, for this the b
 The first 12 bits are the height of the image, the next 12 bits are the width, then there are 4 bits to different types of bitmaps, then the bit if there is a color palette or not.
 Only the first 2 are full implemented (scale and rotation), The rest is partially implemented.
 
+```
 type 0: 32 bit/pixel
 type 1: 32 bit/pixel with transparent channel
 type 2: 16 color 565 schema
@@ -20,6 +21,7 @@ type B: 2 bit/pixel with transparent channel
 type C: 1 bit/pixel
 type D: 1 bit/pixel with transparent channel
 types E,F: free
+```
 
 ## Load Image Format
 
@@ -82,7 +84,7 @@ This is the draw and the behavior of nube.
 
 `+nube` add one nube to particles system.
 
-`+nube` add one nube to particles system.
+`ininubes` stark memory and add 20 nubes
 
 ```
 :nub | adr -- 0-delete
@@ -138,3 +140,4 @@ Then take the mouse position and, with the animation of the bird (ave) draw the 
 : main ;
 ```
 
+![Bitmaps Sprites](../img/6-bitmaps.png]

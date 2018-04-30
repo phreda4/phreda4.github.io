@@ -95,3 +95,5 @@ p.map traverse the array with the correct adress, the draw or test or whatever.
 ```
 
 Hit F1 for add a particles!!
+
+![Particle System](../img/5-particlesystem.png]
