@@ -30,4 +30,19 @@ the var mati is not exported, is 4x4 matrix with the identity and continue in va
 	'mat> ! ;
 ```
 
+The matrix is filled with pre or post multiply operations: translate, rotate and scale. Then you can transform any point with this matrix with `transform`
 
+```
+::mtrans | x y z -- ; post
+::mtransi | x y z -- ; pre
+::mscale | x y z -- ; post
+::mscalei | x y z -- ; pre
+::mrotx | x -- ; post
+::mrotxi | x -- ; premultiplica
+::mroty | y  -- ; post
+::mrotyi | y -- ; pre
+::mrotz | z -- ; post
+::mrotzi | z -- ; pre
+
+::transform | x y z -- x y z
+```

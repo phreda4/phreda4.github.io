@@ -71,3 +71,5 @@ Many good programming practices are wrong, since you try to find a generality in
 10.[Bitmaps](doc/10-bitmaps.md)
 
 11.[Icons](doc/11-icons.md)
+
+11.[3d Math](doc/12-3d Math.md)
