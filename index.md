@@ -5,11 +5,13 @@ As all Forth is Minimalist, it does not need complex mechanisms of abstraction, 
 Forth is not popular these days but curiously does not die, every programmer of forth knows why.
 
 The idea is simple:
-+ Any number in source code go to the data stack.
-+ Any adress of word is stack too.
-+ Any word (characters separate by spaces) search in dictionary,
- +	if is found execute the word.
- +	else is an error, stop compilation!!
+```
+* Any number in source code go to the data stack.
+* Any adress of word is stack too.
+* Any word (characters separate by spaces) search in dictionary,
+  +	If is found execute the word.
+  +	Else is an error, stop compilation!!
+```
 
 Unlike ColorForth, the meaning of words is defined by prefixes.
 the most importan is ' (adressof) then *word* execute a word, and *'word* is the adress of word.
@@ -72,4 +74,6 @@ Many good programming practices are wrong, since you try to find a generality in
 
 11.[Icons](doc/11-icons.md)
 
-11.[3d Math](doc/12-3d Math.md)
+12.[3d Math](doc/12-3d Math.md)
+
+13.[Debug](doc/13-debug.md)
