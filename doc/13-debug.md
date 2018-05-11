@@ -42,7 +42,8 @@ The tokenizer is the same one that is used to compile or transform code, it has 
 
 ![Debugger](../img/debug1.png)
 
-In the debugger you can hit f1 to play to cursor, f2 to step with enter in word defined, f3 to step but not enter in the word definition. f6 view the framebuffer.
+In the debugger you can hit f1 to play to cursor, f2 to step with enter in word defined, f3 to step but not enter in the word definition. f6 view the framebuffer. TAB change the window, CODE, VARS, MEM and STACK.
+
 
 
 
