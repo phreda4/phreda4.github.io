@@ -15,8 +15,9 @@ The idea is simple:
 
 Unlike ColorForth, the meaning of words is defined by prefixes.
 the most importan is ' (adressof) then *word* execute a word, and *'word* is the adress of word.
+This adress is a powerfull abstraction, many languajes try to avoid this, but here we recommend its use.
 
-For make a program you need define yours words.
+For make a program you need define yours words to express the algorithm that tries to solve the problem to be programmed.
 
 A program have two types of words, actions and data, time and space. For define an action :r4 use the prefix : and to define data the prefix #
 
@@ -38,21 +39,21 @@ The main diccionary has a basic interaction with the OS, 12 words, very basic. T
 * Is easy port to other OS or embebed in a boot image. No OS !
 * The compiler only need code this 12 words for comunicate with the OS.
 
-The cons is not have full access to hard, for now!.
+The cons is not have full access to hard, for now!, you or my can modify this in any moment.
 
-Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedded,but the idea is avoid this and in some point, recreate in :r4
+Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedded,but the idea is avoid this and in some point, recreate in :r4, the graphics words are already recreate for the actual compiler.
 
 Keep it simple, this is the main path, but simple is not easy, is a search in the world of problem for extract or ideate a correct and basic solution.
 
-The current development is dominated by certain ideas that in my opinion are wrong.
+The current development in computers is dominated by certain ideas that in my opinion are wrong.
 
 The idea of using complex structures to simplify development only makes the problem worse. In addition to hiding certain parts of the problem that should be exposed to see the solution correctly.
 
 The idea of defensive programming by calling a lawyer and making it clear that it can be done and not done, even before writing a single calculation, now instead of having an algorithm, we have an algorithm and a lawyer.
 
-Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a unique problem, not a different set of problems.
+Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a unique problem, not a different set of problems. Charles Moore say, real programs execute in real computers.
 
-1.[The Basics](doc/1-basics.md) 
+1.[The Basics](doc/1-basics.md)
 
 2.[The Main Loop](doc/2-mainloop.md)
 
@@ -77,3 +78,5 @@ Many good programming practices are wrong, since you try to find a generality in
 12.[3d Math](doc/12-3d Math.md)
 
 13.[Debug](doc/13-debug.md)
+
+13.[Random](doc/14-random.md)
