@@ -67,3 +67,5 @@ The Word savemem make a really usefull thing, save from mark to actual here, you
 	empty ;
 ```
 
+Many of the data structures used are intended to be used in a static way, that is, they do not have to be modified when they are being used, for example, if I am going to save a bitmap, it will not be in a compressed format in memory because I would have to expand it to graph it, but if I do not compress it on disk, the load will not convert either.
+

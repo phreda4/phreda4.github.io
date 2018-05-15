@@ -1,6 +1,6 @@
 # Vector Graphics
 
-:r4 born for and experiment, I make a animation program for wince called redamation, some complication apear and try to remediate the problem separating the layer of drawing of the layer of program, I start to learn forth and try to add a programable unit in this animation program in forth. This days have good opinion of flash and then try to use vector graphics for all.
+:r4 born for an experiment, I make a animation program for wince called redamation, some complication apear and try to remediate the problem separating the layer of drawing of the layer of program, I start to learn forth and try to add a programable unit in this animation program in forth. This days have good opinion of flash and then try to use vector graphics for all.
 
 First to all, :r4 not have console, only a framebuffer, the words for use are
 
