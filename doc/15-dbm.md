@@ -1,4 +1,4 @@
-# Memory Data Base
+ï»¿# Memory Data Base
 
 Library for memory database with char separators, variable length registers.
 
@@ -21,7 +21,7 @@ See the demo in apps/database agenda.
 
 #gragenda 0 0
 $400 $201 $202 $203 $304 0
-"Nombre|Móvil|Particular|Trabajo|e-mail"
+"Nombre|Movil|Particular|Trabajo|e-mail"
 ```
 
 `dbagenda` define the file for store the db, `fkagenda` define the form for entry the datas and `gragenda` define a grid for view the db.
@@ -30,8 +30,8 @@ The file `db/agenda/agenda.fk` define the field with type, for edit, and size. R
 ```
 Agenda~
 Nombre|A80~
-Móvil|A20|9999999999~ Particular|A20|9999999999~ Trabajo|A20|9999999999~
-Email|A40~ Dirección|A40~
+Movil|A20|9999999999~ Particular|A20|9999999999~ Trabajo|A20|9999999999~
+Email|A40~ Direccion|A40~
 ```
 
 load the db and the form:
