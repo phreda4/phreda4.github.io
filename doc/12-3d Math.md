@@ -152,3 +152,5 @@ The main word.
 
 : mm main ;
 ```
+
+![3d cubes](../img/12-3dmath.png)
