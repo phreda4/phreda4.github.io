@@ -1,0 +1,47 @@
+# Simple Shooter
+
+Now, make a simple space shooter.
+
+I use the `gui` for generic words, `vesprite` for vector graphics, `part16` for particle system, `penner` for penner animation (tranform inteval 0..1 in diferent times) and draws.vsp for make graphics, in this case i download a svg sheet of space graphics and import with the editor the selected ones.
+
+```
+^r4/lib/gui.txt
+^r4/lib/vesprite.txt
+^r4/lib/part16.txt
+^r4/lib/penner.txt
+^./draws.vsp
+```
+
+lets define 3 particle systems, for aliens, for bullets and for fx, I use deferent collection because fx not collide with others, bullets collide with aliens.
+
+```
+#aliens 0 0
+#shoot 0 0
+#fx 0 0
+```
+
+The players is one, I define Y position, X position, X velocity and X aceletarion
+
+```
+#yp -0.8
+#xp
+#xv
+#xa
+```
+
+Try to make modification to acceleration with keys and use the velocity for angle of ship too.
+
+From botton to up.
+Define memory for particles, a paper color and call main.
+
+```
+:memory
+	$cccccc 'paper !
+	mark
+	200 'aliens p.ini
+	200 'shoot p.ini
+	200 'fx p.ini
+	;
+
+: memory main ;
+```
