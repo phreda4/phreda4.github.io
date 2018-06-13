@@ -96,3 +96,69 @@ Then test the keyboard, <le>ft key and <ri>gth key for set the aceleration varia
 	;
 ```
 
+The shoot particle systema work wiht two words, add a shoot (+disparo) add a particle with behavior disparo and in xp,yp position, calc angle with velocity 0.25 + for horizontal to vertical translation and scale 5 >> for adjust the velocity.
+
+The word disparo call by particle drawing with the adress of current particle, if you leave a 0 in the stack, then the particle is erased from list.
+
+See how get x and y , if escape from screen delete ( 1.0 >? ) and if hit with any alien (p.in2d?) the remove the alien and add the explotion.
+
+Calculate the new position with the velocity and finally draw the shoot.
+
+```
+:disparo | adr --
+	>b
+	20 qdim
+	b@+ b@+
+	1.0 >? ( 2drop 0 ; )
+	2dup 'aliens 0.06 p.in2d? 1? ( 'aliens p.del +explosion 0 ; )( drop )
+	fpos
+	b@+ b> 12 - +!
+	b@+ b> 12 - +!
+	'bala b@+ rvesprite
+	;
+
+:+disparo
+	'disparo 'shoot p!+ >a
+	xp a!+ yp a!+
+	xv 3 << neg 0.25 + sincos
+	5 >> a!+ 5 >> a!+
+	0 a!+
+	;
+```
+
+The alien word add an alien with a random number.
+
+The addalien add to particle list aliens the x randomized and upper in screen with velocity random in x and -0.01 in vy, choose a draw too.
+
+The dalien1 word execute in every particle alien, leave 0 in stack when need remove, this is when alien is outside of the screen or is hit with the player, for now call to exit but this you can lose one live and so on.
+
+Here calculate the positions with velocity andfinaly draw the sprite.
+
+```
+:dalien1 | adr --
+	>b
+	80 qdim
+	b@+
+	-1.0 <? ( drop 0 ; ) 1.0 >? ( drop 0 ; )
+	b@+
+	-1.0 <? ( 2drop 0 ; )
+	over xp - over yp - distfast 0.1 <? ( 3drop exit ; ) drop
+	fpos
+	b@+ b> 12 - +!
+	b@+ b> 12 - +!
+	b@+ b@+ rvesprite
+	;
+
+:addalien
+	'dalien1 'aliens p!+ >a
+	r1 a!+ 1.0 a!+
+	r.001 a!+ -0.01  a!+
+	rand %10000 and? ( 'alien1 )( 'alien2 ) a!+ drop
+	0 a!+
+	;
+
+:alien
+	rand
+	$1f00 nand? ( addalien ) drop
+	;
+```
