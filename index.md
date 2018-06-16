@@ -1,6 +1,6 @@
 # :r4 programing languaje
 
-[demo](img/simpleshoot.gif)
+<img src="img/simpleshoot.gif">
 
 ## Source
 
@@ -101,4 +101,6 @@ Many good programming practices are wrong, since you try to find a generality in
 
 The :r4 compiler make two files in r4asm/ folder, code.asm and data.asm and then this is compile when call FASM.
 
-1.[Tokenizer](doc/1c-tokenizer.md)
+1.[Tokenizer](doc/c1-tokenizer.md)
+
+2.[Post Tokenizer](doc/c2-postokenizer.md)
