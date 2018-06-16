@@ -1,8 +1,14 @@
 # :r4 programing languaje
 
+[demo](img/simpleshoot.gif)
+
+## Source
+
 :r4 is a language derived from ColorForth created in 2005.
 As all Forth is Minimalist, it does not need complex mechanisms of abstraction, in fact the only means of abstraction is the adress.
 Forth is not popular these days but curiously does not die, every programmer of forth knows why.
+
+## Idea
 
 The idea is simple:
 ```
@@ -45,6 +51,8 @@ Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedde
 
 Keep it simple, this is the main path, but simple is not easy, is a search in the world of problem for extract or ideate a correct and basic solution.
 
+## Current development
+
 The current development in computers is dominated by certain ideas that in my opinion are wrong.
 
 The idea of using complex structures to simplify development only makes the problem worse. In addition to hiding certain parts of the problem that should be exposed to see the solution correctly.
@@ -52,6 +60,8 @@ The idea of using complex structures to simplify development only makes the prob
 The idea of defensive programming by calling a lawyer and making it clear that it can be done and not done, even before writing a single calculation, now instead of having an algorithm, we have an algorithm and a lawyer.
 
 Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a unique problem, not a different set of problems. Charles Moore say, real programs execute in real computers.
+
+## Basic Library
 
 0.[Configuration](doc/0-configure.md)
 
@@ -84,3 +94,11 @@ Many good programming practices are wrong, since you try to find a generality in
 14.[Random](doc/14-random.md)
 
 15.[Memory Data Base](doc/15-dbm.md)
+
+16.[Basic Shooter](doc/16-simple shooter.md)
+
+## Compiler
+
+The :r4 compiler make two files in r4asm/ folder, code.asm and data.asm and then this is compile when call FASM.
+
+1.[Tokenizer](doc/1c-tokenizer.md)
