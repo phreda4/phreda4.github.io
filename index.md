@@ -104,3 +104,5 @@ The :r4 compiler make two files in r4asm/ folder, code.asm and data.asm and then
 1.[Tokenizer](doc/c1-tokenizer.md)
 
 2.[Post Tokenizer](doc/c2-postokenizer.md)
+
+3.[Generate Code](doc/c3-generatecode.md)
