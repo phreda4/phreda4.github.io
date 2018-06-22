@@ -21,7 +21,7 @@ The compile generate two files, code.asm and data.asm and put in the r4asm/ fold
 
 The assembly is done with the FASM compiler [FlatAssembler](https://flatassembler.net/)
 
-
+<img src="../gif/compile.gif">
 
 
 
