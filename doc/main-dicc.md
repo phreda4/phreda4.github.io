@@ -1,7 +1,8 @@
-Main Dicctionary.
+# Main Dicctionary.
+
 The Language start with this words defined, in top of this you can define new word until the system is done.
 
-Stack Manipulation Words
+## Stack Manipulation Words
 ```
 DUP 	| a -- a a
 DROP 	| a --
@@ -20,7 +21,7 @@ ROT 	| a b c -- b c a
 2SWAP	| a b c d -- c d a b
 ```
 
-Control flow construction
+## Control flow construction
 ```
 (	| Start Block
 )	| End Block
@@ -30,7 +31,7 @@ Control flow construction
 ]	| End anonymous definition leave direction on stack
 ```
 
-Conditionals
+## Conditionals
 ```
 0? 	| --		; is 0 the Top of Stack (TOS)
 +? 	| --		; TOS positive (or 0)?
@@ -46,7 +47,7 @@ AND?	| a b -- a	; a and b ?
 NAND?	| a b -- a	; a nand b ?
 ```
 
-Return Stack Manipulation
+## Return Stack Manipulation
 ```
 ;	| --		R: a -- 	; End Word
 >R 	| a --      R: -- a		; Data to Return stack
@@ -56,7 +57,7 @@ R@	| -- a      R: a -- a	; Get Return Top of Stack
 EXEC  	| vector --  ; call to vector
 ```
 
-Arithmetic and logic operators
+## Arithmetic and logic operators
 ```
 AND 	| a b -- c     c = a AND b
 OR 		| a b -- c     c = a OR b
@@ -85,7 +86,7 @@ NEG 	| a -- b		b=-a
 0>>		| a b -- c		b=a0>>b (zero)
 ```
 
-Memory access
+## Memory access
 ```
 @ 		| a -- b		b=32(a)
 C@ 		| a -- b		b=8 (a)
@@ -104,7 +105,7 @@ W@+		| d -- d+2 v	word (16bits)
 W!+		| v d -- d+2
 ```
 
-Pointer registers A and B
+## Pointer registers A and B
 ```
 >A		| v --		A=v ; A is a register for use like pointer
 A>		| -- v      v=A
@@ -123,7 +124,7 @@ B@+		| -- v		v=[B] B=B+4
 B!+		| v --		[B]=v B=B+4
 ```
 
-Memory copy and fill
+## Memory copy and fill
 ```
 MOVE	| de sr cnt --	; Copy CNT dword from SR to DE
 MOVE>   | de sr cnt --	; Copy CNT dword from SR to DE (reverse)
@@ -133,7 +134,7 @@ CMOVE>  | de sr cnt --	; Copy CNT bytes from SR to DE (reverse)
 CFILL	| v sr cnt --	; fill CNT bytes with V in DE
 ```
 
-Memory and disk interection
+## Memory and disk interection
 ```
 MEM		| -- dir 				; Free memory start
 LOAD	| d "filename" -- e		; Load to memory in D with "file", end in E
@@ -144,7 +145,7 @@ FFIRST  | "path" -- fdd/0		; Get First folder entry
 FNEXT 	| -- fdd/0				; Get Next folder entry, 0 end of files.
 ```
 
-Conection with SO
+## Conection with SO
 ```
 UPDATE	| s -- s		; update the event loop of SO
 MSEC 	| -- a 			; Get the miliseconds of SO
@@ -156,7 +157,7 @@ RUN  	| "nom" --			; Load, compile and execute a source file
 SYSTEM	| "cmd" -- status	; Call system exec "cmd" or 0 end or -1 check state
 ```
 
-Graphics FrameBuffer words
+## Graphics FrameBuffer words
 ```
 SW 		| -- w		; Screen Width
 SH 		| -- h		; Screen Heigth
@@ -187,7 +188,7 @@ LFILL	| --		; Set Fill polygon to lineal degrade
 RFILL	| --		; Set Fill polygon to radial degrade (close to)
 ```
 
-Mouse and Keyboad
+## Mouse and Keyboad
 ```
 XYMOUSE | -- x y 	; x y of pointer
 BMOUSE	| -- b		; buttons of pointer
@@ -195,13 +196,13 @@ KEY		| -- s		; get Key (scancode)
 KEY!	| v --    	; save to key (for modify)
 ```
 
-Joystick
+## Joystick
 ```
 CNTJOY	| -- cnt	; Number of Joysticks
 GETJOY	| j -- a	; Info of Joy J
 ```
 
-Sound
+## Sound
 ```
 SLOAD	| "" -- pp	; Load Sound (FMOD libary)
 SPLAY	| pp -- 	; Play Sound (FMOD libary)
@@ -209,12 +210,12 @@ MLOAD	| "" -- mm	; Load Music (FMOD libary)
 MPLAY	| mm --		; Play Music (FMOD libary)
 ```
 
-Web
+## Web
 ```
 OPENURL	| url header buff -- buff/0		; Open URL trow SO
 ```
 
-Printer
+## Printer
 ```
 DOCINI	| --                    prepara pagina para imprimir
 DOCEND	| --                    imprime pagina

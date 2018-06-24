@@ -20,50 +20,42 @@ The next stage is convert the code making some optimization
 
 `::makeplain` is the main word, this generate a file in "r4/compiler/plain.txt" with some optimizations from the tokenized source code.
 
-Make one file without includes, remove all the ^ prefixes!
+Make some transformation to source code without modify behavior.
 
-Remove all the anonymous definition words. Convert all the [ ] words with a new word with generate names, this avoid the jump to end of definition:
+1. Make one file source code, without includes, remove all the ^ prefixes. For make this I need decorate the names of words with the number for avoid the duplicate names in private/exported definition, without the decorate one word not exported in one include can be called wrong.
+
+2. Remove all the anonymous definition words. Convert all the [ ] words with a new word with generate names, this avoid the jump to end of definition:
 
 ```
 [ 1 'v +! ; ] --> :_a1 1 'v +! ;  '_a1
 ```
 
-Remove dead code and dead data, when traslate code, if the word not have calls then not save in generated.
+3. Remove dead code and dead data, when traslate code, if the word not have calls then not save in generated code.
 
-When a Variable not have adress references, then no one make a poke, then is a constant, then is converted to constant and remove the variable.
+4. When a Variable not have adress references, then no one make a modification of this value, is a constant, then is converted to constant number and remove the variable. Some problem with the `!+ !` operator is resolve but not for large sequences `!+ !+ !+ ..`, need more research on this.
 
 ```
 #var 1
 .. var + ..   -->    .. 1 + ..
 ```
 
-When generate code calculate when can do a constant operation then make a constant folding.
+5. When generate code calculate when can do a constant operation then make a constant folding. Need more research for change order of opertion for simplify more, but the basic work ok.
 
 ```
 3 4 + -->  7
 ```
 
-Make the transformation of division to multiply inverse.
+6. Make the transformation of division to multiply inverse. Division operation is very expensive, when the divisor is a constant can be converted to a multiplication of inverse or a shift. The last operation is for sign correct result.
 
 ```
 13 / --> $4ec4ec4f 34 *>> dup 31 >> -
+4 / --> 2 >> dup 31 >> -
 ```
 
-Make simple power of 2 transformation, some advance convertion is not doing now!.
+7. Make simple multiplication to power of 2 transformation, some advance convertion need more reserch, many compilers transform multiplication by constant to sequences of shift and adds.
 
 ```
 8 * --> 3 >> dup 31 >> -
 ```
 
 When have a plain.txt generate, I reset the tokenizer and tokenize again with this version for generate code.
-
-
-
-
-
-
-
-
-
-
-

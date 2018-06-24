@@ -29,6 +29,8 @@ x<IMAGEN> execute bytecodes
 
 The basic configuration is screen size, you can choose a windows wiht `w1024 h600` or a fullscreen with `f`.
 
+## The debug file
+
 For compile to bytecodes you can call r4 from a console or a bat file and make the image. The file `compiledebug.bat` is:
 
 ```
@@ -41,7 +43,7 @@ There are some special files in the interpreter: if main.r4x exist then load and
 
 Every `run` in the code stack the file executed and call the name to compile and execute, when finish this code reload the previous one.
 
-## Keyboard
+## Keyboard configuration
 
 To read the status of the keys, the scancode is used, this value comes directly from the input hardware avoiding the modifications made by the OS. This decision enables that at some time it is possible to compile for a format that is bootable, totally avoiding the OS.
 
@@ -57,4 +59,4 @@ The difficulty that this decision has is that the different distributions of the
 
 ```
 
-By default the key is spanish (my pc).
+By default the key is spanish (my pc). You can change this comment line and use you keyboard distribution, if any key don't get the correct character, please send me a line or fix the map please, if you have another keyboard layout the same.
