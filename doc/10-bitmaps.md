@@ -140,4 +140,4 @@ Then take the mouse position and, with the animation of the bird (ave) draw the 
 : main ;
 ```
 
-![Bitmaps Sprites](../img/6-bitmaps.png)
+<img src="gif/bitmap.gif">

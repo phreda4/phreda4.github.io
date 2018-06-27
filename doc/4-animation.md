@@ -67,4 +67,5 @@ When draw the sprite use qdim, the size of sprite are 64 pixels, change this for
 
 The main loop call to keyboard test and the drawing words, nothing more!
 
+<img src="gif/basicani.gif">
 
