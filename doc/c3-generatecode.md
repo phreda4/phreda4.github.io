@@ -28,14 +28,30 @@ The assembly is done with the FASM compiler [FlatAssembler](https://flatassemble
 
 ## More optimized code for x86
 
-The key concept is simulate the stack with registers, is some cases the stack operation disappears, and
+The key concept is simulate the stack with registers, is some cases the stack operation disappears.
 
+## Cell information
 
+The first stage is the same in the unoptimiced code, but change when generate code for every word.
 
+The first analisys is the cell analisis in `compiler/r4-cellana.txt` code. This word fill some arrays with information of execution.
 
+Cell information, every cell used in word in:
 
+```
+#:cells )( 1024
+#:cellt )( 1024
+#:cellv )( 1024
+```
 
+Stack information, what cell used in every word of definition in:
 
+```
+#:stki )( $fff		| stack of tokens
+#memstk )( $ffff	| stack memory
+#memstk> 'memstk
+```
 
+The main idea is collect information of cells, who is static (only read), who is used in calculus (arithmetic or logic operations), or in memory (access to memory for read or write), cell live segment.
 
 

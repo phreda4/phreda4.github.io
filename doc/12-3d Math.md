@@ -153,4 +153,4 @@ The main word.
 : mm main ;
 ```
 
-<img src="gif/3dmath.gif">
+<img src="../gif/3dmath.gif">

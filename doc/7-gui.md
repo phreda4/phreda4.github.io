@@ -33,7 +33,7 @@ A simple usageof `tbnt`, the stack usage is `'vector "string"`.
 : main ;
 ```
 
-<img src="gif/simplegui.gif">
+<img src="../gif/simplegui.gif">
 
 See the power of IMGUI, we can define a dynamic quantity of button, the dynamic label can be made with `mprint`, a memory version of `print`, leave in stack a memory adress with the formated string, and the `dup` in the vector of button use the top of stack of loop for set the var `value`.
 

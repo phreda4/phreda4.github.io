@@ -96,4 +96,4 @@ p.map traverse the array with the correct adress, the draw or test or whatever.
 
 Hit F1 for add a particles!!
 
-<img src="gif/particlesis.gif">
+<img src="../gif/particlesis.gif">
