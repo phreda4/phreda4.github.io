@@ -112,6 +112,13 @@ There are controls for blocks and anonymous definition and words with multiple d
 When all the source code is converted, there are a call to `tokenpost`, this is in `compiler/r4-post.txt`, this make a tree of call and calculate the numbers of call start of main definition word `:`, when this information I can detect the unused variables and unused code.
 
 
+## Interative interprete
+
+When have the tokens, you can execute the code or some part. The next task is assign real memory to variables for execute, this is the old version in `system/r4code.txt`, see the definition of `c/var'.
+
+
+
+
 
 
 
