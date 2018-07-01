@@ -114,7 +114,13 @@ When all the source code is converted, there are a call to `tokenpost`, this is 
 
 ## Interative interprete
 
-When have the tokens, you can execute the code or some part. The next task is assign real memory to variables for execute, this is the old version in `system/r4code.txt`, see the definition of `c/var'.
+For debug the code I build `ide/debug-code.txt`, this call the tokenizer and execute, but need a real memory assignation of variables for simulate this.
+This is done with call to `tokenmem` defined in `ide/r4-tokenrun.txt`, see in this code how execute every basic word and how simulate the stacks.
+
+I need store the screen in a auxilliary memory for see whats happen with the framebuffer. Thank's to the run to cursor is possible check the keys, in the debug system put the cursor in a word called when you press a key, hit F1 for run2cursor and see how work this.
+
+<img src="../gif/debugcode.gif">
+
 
 
 
