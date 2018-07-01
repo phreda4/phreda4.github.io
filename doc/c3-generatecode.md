@@ -28,13 +28,13 @@ The assembly is done with the FASM compiler [FlatAssembler](https://flatassemble
 
 ## More optimized code for x86
 
-The key concept is simulate the stack with registers, is some cases the stack operation disappears.
+The key concept is simulate the stack with registers, is some cases the stack disappears in registers.
 
 ## Cell information
 
-The first stage is the same in the unoptimiced code, but change when generate code for every word.
+The first stage is the same of unoptimiced code, but change when generate code for every word.
 
-The first analisys is the cell analisis in `compiler/r4-cellana.txt` code. This word fill some arrays with information of execution.
+We perform the cell analisys in `compiler/r4-cellana.txt` code. This word fill some arrays with information of execution.
 
 Cell information, every cell used in word in:
 
@@ -52,7 +52,7 @@ Stack information, what cell used in every word of definition in:
 #memstk> 'memstk
 ```
 
-The main idea is collect information of cells, who is static (only read), who is used in calculus (arithmetic or logic operations), or in memory (access to memory for read or write), cell live segment.
+The main idea is collect information of cells, who cell is static (only read), who cell is used in calculus (arithmetic or logic operations), or in memory (access to memory for read or write), cell live segment and others.
 
 Example of sqrt code with coments, actual development:
 ```
@@ -146,9 +146,13 @@ lea eax,[ebx]
 ret
 ```
 
-IN is the registers in stack from input, the eax is the container. Next a list of blocks of code with the numbers of intrucctions. Next a list of cell used, with the quantity of reads (R) and writes (W), if is a constant a CTE, some other infor, the life (from:to) and the virtual register. In this word, only with 3 register you can compile.
+The first block of info is: IN the registers in stack from input, the eax is the container. Next a list of blocks of code with the numbers of intrucctions. Next a list of cell used, with the quantity of reads (R) and writes (W), if is a constant a CTE, some other info, the life (from:to) and the virtual register. In this word, only with 3 register you can compile.
 
 Then the list of words with the current stack precalculate in previous analysis, and the stack in real values.
 
-The lines without ; is the code generated, the labels are global.
+The next block is the source token, the stack with number of cell and the real stack in this moment. The lines without ; is the code generated, the labels are global.
+
+If the numbers of virtual register is less of real and not have case of recursion or diferents cell in input or output stack, then only assign real registers to virtual ones produce good code.
+
+
 
