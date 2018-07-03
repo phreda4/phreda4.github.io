@@ -26,6 +26,8 @@ The assembly is done with the FASM compiler [FlatAssembler](https://flatassemble
 
 <img src="../gif/compile.gif">
 
+The blocks of code is converted to conditional jump and jumps.
+
 ## More optimized code for x86
 
 The key concept is simulate the stack with registers, is some cases the stack disappears in registers.
@@ -154,5 +156,41 @@ The next block is the source token, the stack with number of cell and the real s
 
 If the numbers of virtual register is less of real and not have case of recursion or diferents cell in input or output stack, then only assign real registers to virtual ones produce good code.
 
+### Th Blocks
 
+The blocks of code are converted with conditional jumps, but with this schema, we have a more complex escenario, the stack representation need to be converted to the correct format for normal work. There are two flavors, with terminator ; or not
+
+#### IF
+
+An example of this is:
+
+1? ( word ) 
+
+take note for the contruction:
+
+1? ( worda ; ) wordb
+
+is a IF-ELSE, the wonderfull colorforth not have else for this construct!, really is good to think if you need the ELSE part, this construction increase the factorization of code.
+
+#### IF-ELSE
+
+0? ( worda )( wordb )
+
+#### WHILE
+
+Very verstil construction, when I start define r4 I think a lot how implement the FOR construction, when start code with this WHILE, the FOR disapear, very elegant and complete. Don't force the first part to one word!.
+
+( worda 1? )( wordb )
+
+#### UNTIL
+
+Not used, something is more simple a while because you need drop a value.
+
+( word 1? )
+
+#### REPEAT
+
+used less.
+
+( word )
 
