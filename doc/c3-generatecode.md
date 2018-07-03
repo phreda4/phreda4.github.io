@@ -164,33 +164,115 @@ The blocks of code are converted with conditional jumps, but with this schema, w
 
 An example of this is:
 
-1? ( word ) 
+```
+1? ( word )
+
+; This generate code like:
+
+; conditional
+; point (A)
+	jz _JUMP
+	call word
+_JUMP:
+; in this point the stack is the same like point (A)
+```
 
 take note for the contruction:
 
+```
 1? ( worda ; ) wordb
+
+; This generate code like:
+
+; (A)
+	jz _JUMP
+	jmp worda ; now the stack in exit of worda is the same of exit of current 		definition
+_JUMP:
+; stack same in (A)
+```
 
 is a IF-ELSE, the wonderfull colorforth not have else for this construct!, really is good to think if you need the ELSE part, this construction increase the factorization of code.
 
 #### IF-ELSE
 
+```
 0? ( worda )( wordb )
+
+; Generate...
+
+	jnz _ELSE
+	call worda
+; (A)
+	jmp _ENDIF
+_ELSE:
+	call wordb
+; same in (A)
+_ENDIF:
+```
+
+See when need normalize to a same stack representation, no matter how is this representation, can be registers or real stack.
+This normalizations is the key to generate code for avoid real stack operation, if you normaliza to one form in every of this point and before every call, you generate code ok but not optimal.
 
 #### WHILE
 
-Very verstil construction, when I start define r4 I think a lot how implement the FOR construction, when start code with this WHILE, the FOR disapear, very elegant and complete. Don't force the first part to one word!.
+The most versatile and powerful execution flow construction. When I start define r4 I think a lot how implement the FOR construction, when start code with this WHILE, the FOR disapear, very elegant and complete. Don't force the first part to one word!.
+The code generate can avoid a jump with some modification.
 
+```
 ( worda 1? )( wordb )
+
+; Generate...
+
+_INWHILE:
+; (A)
+	call worda
+	jz _ENDWHILE
+	call wordb
+; stack to (A)
+	jmp _INWHILE
+_ENDWHILE:
+
+; and more eficcient (one jmp less in inner loop)
+
+	jmp _INWHILE
+_LOOPWHILE:
+; stack to (A)
+	call wordb
+_INWHILE:
+; (A)
+	call worda
+	jnz _LOOPWHILE ; see the inverse of conditional
+```
 
 #### UNTIL
 
-Not used, something is more simple a while because you need drop a value.
+It is not widely used, something is more simple a while because you need drop a value.It is more efficient to have a jump less, but sometimes it is necessary to do a calculation before reentering the loop and this is done with WHILE.
 
+```
 ( word 1? )
+
+; Generate...
+
+; (A)
+_REPEAT:
+	call word
+; stack to (A)
+	jz _REPEAT
+```
 
 #### REPEAT
 
-used less.
+The least used, olny can break for a return stack manipulation or system.
 
+```
 ( word )
+
+; Generate...
+
+; (A)
+_REPEAT:
+	call word
+; stack to (A)
+	jmp _REPEAT
+```
 
