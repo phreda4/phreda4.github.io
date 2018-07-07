@@ -36,6 +36,8 @@ In lines from 44 to 69 is the basic words for modify the text.
 	-1 '$fuente +! ;
 ```
 
+The art in the program is include in the source code, for this, try to use editor called from the code, this is done with Control-E keys. The idea is put the name in the source, put the cursor in this line and press Ctrl-E.
+
 in line 244 `:controle' word call the apropiate editor for vectors graphics, bitmap and icons. Before call the editor, fill the info of file. See how store in file this info and how call the editor.
 
 ```
