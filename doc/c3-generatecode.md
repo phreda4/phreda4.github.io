@@ -36,7 +36,7 @@ The key concept is simulate the stack with registers, is some cases the stack di
 
 The first stage is the same of unoptimiced code, but change when generate code for every word.
 
-We perform the cell analisys in `compiler/r4-cellana.txt` code. This word fill some arrays with information of execution.
+We perform the cell analysis in `compiler/r4-cellana.txt` code. This word fill some arrays with information of execution.
 
 Cell information, every cell used in word in:
 
