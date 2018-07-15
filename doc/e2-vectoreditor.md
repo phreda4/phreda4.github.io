@@ -30,3 +30,5 @@ and full interpolate:
 ```
 
 When the editor is called with a .vsp file what is executed is, first, the system of denomination of variables, the copy, the deletion, the import of svg and just when a single drawing is edited the editor itself is called.
+
+<img src="../gif/vesedit.gif">
