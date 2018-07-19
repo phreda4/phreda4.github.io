@@ -118,5 +118,7 @@ Example:
 : main ;
 ```
 
+<img src="../gif/gui.gif">
+
 See how you need memory for store every input pad!, `.btnt` has focus control, then with tab and enter you can exit of this screen
 
