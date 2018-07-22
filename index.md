@@ -107,6 +107,8 @@ The :r4 compiler make two files in r4asm/ folder, code.asm and data.asm and then
 
 3.[Generate Code](doc/c3-generatecode.md)
 
+4.[Profiler Code](doc/c4-profiler.md)
+
 ## Editors
 
 1.[Text Editor](doc/e1-texteditor.md)
