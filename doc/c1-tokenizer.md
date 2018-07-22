@@ -120,17 +120,3 @@ This is done with call to `tokenmem` defined in `ide/r4-tokenrun.txt`, see in th
 I need store the screen in a auxilliary memory for see whats happen with the framebuffer. Thank's to the run to cursor is possible check the keys, in the debug system put the cursor in a word called when you press a key, hit F1 for run2cursor and see how work this.
 
 <img src="../gif/debugcode.gif">
-
-
-
-
-
-
-
-
-
-
-
-
-
-

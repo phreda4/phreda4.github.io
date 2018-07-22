@@ -8,3 +8,4 @@ The generator is in `IDE/profiler-code.txt`. The mechanism used is to add in eac
 
 these words are defined in `lib/r4-incprofile.txt` and record the number of calls between words and the time used in their execution, record this table to the disk when the execution finishes.
 
+<img src="../gif/profiler.gif">
