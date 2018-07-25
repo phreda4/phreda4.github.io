@@ -51,6 +51,10 @@ Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedde
 
 Keep it simple, this is the main path, but simple is not easy, is a search in the world of problem for extract or ideate a correct and basic solution.
 
+## A more advanced introducction
+
+[Landscape](doc/landscape.md)
+
 ## Current development
 
 The current development in computers is dominated by certain ideas that in my opinion are wrong.
