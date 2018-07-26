@@ -13,3 +13,13 @@ It is preferable to recode that patching, but, rightly, FORTH has the ability to
 Each system is composed of several levels, some closer to the machine and others more abstract, but beware! It is easy to define levels that are not necessary, overcomplicate and try to solve problems that do not exist are the worst mistakes one can make, Charles Mooro and Jeff Fox are clear about this, I strongly recommend reading everything they find about them.
 
 When you think about :r4 I think that you are not aware of the real code that it generates, but I do, since my goal is to improve the language. I'm not sure if this can be seen for someone who does not think how is generating the code and for this I do explicit here: The most important abstraction is the address, the name of a direction can point to anything, a data, a code , a more complex structure, a drawing, etc ... this is the point of separation of language levels, where words are defined that build a level, for example at the level of bits, and then words that build above this level, for example a graphic icon.
+
+## Words Names
+
+The words are case insensitive, since it does not make sense to give different meanings to words that are upper-case or low-case.
+
+Each definition hides the previously defined name, so the search for the words in the compiler is done from the end to the beginning. The other form of hidding is the declaration of local or exported, in the source code each inclusion only makes visible the words defined with :: or #:, the other are invisible.
+
+I also think that the problem of name pollination is overdimensioned, in fact when you define auxiliary names for a main word, you prefer to put short names and save the meaningful names to the keywords of the program.
+
+It is a headache to redefine the basic word, today this is not proven but desirable an indication of the duplication of the name.
