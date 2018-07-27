@@ -48,3 +48,9 @@ It is very important to find the amount of memory that I will use for a structur
 There is a type of programming problem that consists of declaring that you do not know how much a list of numbers can grow and you are invited to design a linked list, this approach has several problems: first, memory is limited, then, design a structure that It will take our requirement twice (since now I need to save the number and the pointer to the next one) and it is also unreal, it will never be able to handle more than half of the memory that could be used with a simple array.
 
 You always have to define how much I will use for each thing, if I need more I will redefine this memory and if I find that I do not need so much I can reduce it, but maintaining the value of these limits is part of the program, not knowing is having an unknown in more the problem.
+
+## Almost a OS
+
+The conection with the OS is minimal, a flat access to video framebuffer, the raw scancode from keyboard and access to mouse (the android version work with 5 fingers).
+
+In some point, I try to make a booteable system, but the technology change and today, the web browser is the new OS, perhaps have more sense make a webassembly compiler
