@@ -81,6 +81,8 @@ Many good programming practices are wrong, since you try to find a generality in
 
 6.[Fonts](doc/6-font.md)
 
+6.1.[Mprint](doc/6.1-mprint.md)
+
 7.[GUI](doc/7-gui.md)
 
 8.[Data Structures](doc/8-data.md)
