@@ -67,60 +67,62 @@ Many good programming practices are wrong, since you try to find a generality in
 
 ## Basic Library
 
-0.[Configuration](doc/0-configure.md)
+[Configuration](doc/0-configure.md)
 
-1.[The Basics](doc/1-basics.md)
+[The Basics](doc/1-basics.md)
 
-2.[The Main Loop](doc/2-mainloop.md)
+[The Main Loop](doc/2-mainloop.md)
 
-3.[Vectors Graphics](doc/3-vectors.md)
+[Strings](doc/strings.md)
 
-4.[Animation](doc/4-animation.md)
+[Vectors Graphics](doc/3-vectors.md)
 
-5.[Memory](doc/5-memory.md)
+[Animation](doc/4-animation.md)
 
-6.[Fonts](doc/6-font.md)
+[Memory](doc/5-memory.md)
 
-6.1.[Mprint](doc/6.1-mprint.md)
+[Fonts](doc/6-font.md)
 
-7.[GUI](doc/7-gui.md)
+[Mprint](doc/6.1-mprint.md)
 
-8.[Data Structures](doc/8-data.md)
+[GUI](doc/7-gui.md)
 
-9.[Math](doc/9-math.md)
+[Data Structures](doc/8-data.md)
 
-10.[Bitmaps](doc/10-bitmaps.md)
+[Math](doc/9-math.md)
 
-11.[Icons](doc/11-icons.md)
+[Bitmaps](doc/10-bitmaps.md)
 
-12.[3d Math](doc/12-3d Math.md)
+[Icons](doc/11-icons.md)
 
-13.[Debug](doc/13-debug.md)
+[3d Math](doc/12-3d Math.md)
 
-14.[Random](doc/14-random.md)
+[Debug](doc/13-debug.md)
 
-15.[Memory Data Base](doc/15-dbm.md)
+[Random](doc/14-random.md)
 
-16.[Basic Shooter](doc/16-simple shooter.md)
+[Memory Data Base](doc/15-dbm.md)
+
+[Basic Shooter](doc/16-simple shooter.md)
 
 ## Compiler
 
 The :r4 compiler make two files in r4asm/ folder, code.asm and data.asm and then this is compile when call FASM.
 
-1.[Tokenizer](doc/c1-tokenizer.md)
+[Tokenizer](doc/c1-tokenizer.md)
 
-2.[Post Tokenizer](doc/c2-postokenizer.md)
+[Post Tokenizer](doc/c2-postokenizer.md)
 
-3.[Generate Code](doc/c3-generatecode.md)
+[Generate Code](doc/c3-generatecode.md)
 
-4.[Profiler Code](doc/c4-profiler.md)
+[Profiler Code](doc/c4-profiler.md)
 
 ## Editors
 
-1.[Text Editor](doc/e1-texteditor.md)
+[Text Editor](doc/e1-texteditor.md)
 
-2.[Vector Editor](doc/e2-vectoreditor.md)
+[Vector Editor](doc/e2-vectoreditor.md)
 
-3.[Bitmap Editor](doc/e3-bitmapeditor.md)
+[Bitmap Editor](doc/e3-bitmapeditor.md)
 
-4.[Icon Editor](doc/e4-iconeditor.md)
+[Icon Editor](doc/e4-iconeditor.md)
