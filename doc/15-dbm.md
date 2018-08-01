@@ -45,3 +45,21 @@ load the db and the form:
 ## Log Version
 
 There are words for make a db with a log file, every change in the db is append to a log file id disk and you can reconstruct the entire db or make a replicate with a timestamp.
+
+## Work with database
+
+For traverse de database
+
+```
+::dbmap | vec 'db -- ; vec | vec nro adri adrr -- vec nro adri
+|nro is from max to 0
+
+::dbmapn | vec 'db -- ; vec | vec nro adri adrr -- vec nro adri
+| nro is 0 to max
+```
+
+In lib/parse.txt you have word for select the correct field.
+
+For example: I have a database of articles and I need to obtain the different suppliers of the articles, for this I will go through the database and get the different names of suppliers in a string arrangement.
+
+
