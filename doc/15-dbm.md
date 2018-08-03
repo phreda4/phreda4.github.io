@@ -60,6 +60,15 @@ For traverse de database
 
 In lib/parse.txt you have word for select the correct field.
 
-For example: I have a database of articles and I need to obtain the different suppliers of the articles, for this I will go through the database and get the different names of suppliers in a string arrangement.
+```
+::>>s | adr -- adr'	| go to next separator
+::>>f | adr -- adr' | go to next field
+::fld# | adr -- adr cnt	| cnt of fields
+::>>fi | adr -- adr'	| next record
+::reg# | adr -- adr cnt | count record
 
+
+```
+
+For example: I have a database of articles and I need to obtain the different suppliers of the articles, for this I will go through the database and get the different names of suppliers in a string arrangement.
 
