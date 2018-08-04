@@ -48,6 +48,18 @@ There are words for make a db with a log file, every change in the db is append 
 
 ## Work with database
 
+In lib/parse.txt you have word for select the correct field.
+
+```
+::>>s | adr -- adr'	| go to next separator
+::>>f | adr -- adr' | go to next field
+::fld# | adr -- adr cnt	| cnt of fields
+::>>fi | adr -- adr'	| next record
+::reg# | adr -- adr cnt | count record
+```
+
+In lib/db2.txt
+
 For traverse de database
 
 ```
@@ -58,17 +70,33 @@ For traverse de database
 | nro is 0 to max
 ```
 
-In lib/parse.txt you have word for select the correct field.
+For insert update and delete registers
 
 ```
-::>>s | adr -- adr'	| go to next separator
-::>>f | adr -- adr' | go to next field
-::fld# | adr -- adr cnt	| cnt of fields
-::>>fi | adr -- adr'	| next record
-::reg# | adr -- adr cnt | count record
+::dbinsert | 'db --   ; inserta memoria al final del archivo
+::dbupdate | nroreg 'db --
+::dbdelete | nro 'db --
+```
 
+For sort in diferents type of registers
 
+```
+::dbsort | fld 'db -- ;
+::dbsortstr | fld 'db -- ;
+::dbsortdate | fld 'db --
+```
+
+For Filter
+
+```
+::dbfilterv | 'que 'db --
+```
+
+For searchany value
+```
+::dbsearchstr | "" nro 'db -- reg/0
+::dbsearchany | "" nro 'db --  reg/0
+::dbsearchnext | "" nro 'db --  reg/0
 ```
 
 For example: I have a database of articles and I need to obtain the different suppliers of the articles, for this I will go through the database and get the different names of suppliers in a string arrangement.
-
