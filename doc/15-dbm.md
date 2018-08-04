@@ -48,7 +48,7 @@ There are words for make a db with a log file, every change in the db is append 
 
 ## Work with database
 
-In lib/parse.txt you have word for select the correct field.
+In lib/parse.txt you have word for select the correct field. The idea is keep the adress of register an search the next control char
 
 ```
 ::>>s | adr -- adr'	| go to next separator
@@ -60,17 +60,15 @@ In lib/parse.txt you have word for select the correct field.
 
 In lib/db2.txt
 
-For traverse de database
+For traverse de database, vec is a word for operate over the register.
 
 ```
-::dbmap | vec 'db -- ; vec | vec nro adri adrr -- vec nro adri
-|nro is from max to 0
+::dbmap | vec 'db -- ; vec | vec nro adri adrr -- vec nro adri | nro is from max to 0
 
-::dbmapn | vec 'db -- ; vec | vec nro adri adrr -- vec nro adri
-| nro is 0 to max
+::dbmapn | vec 'db -- ; vec | vec nro adri adrr -- vec nro adri | nro is 0 to max
 ```
 
-For insert update and delete registers
+For insert, update and delete registers. There are versions with log.
 
 ```
 ::dbinsert | 'db --   ; inserta memoria al final del archivo
@@ -78,7 +76,7 @@ For insert update and delete registers
 ::dbdelete | nro 'db --
 ```
 
-For sort in diferents type of registers
+For sort in diferents type of registers. For every db there are a index array, this word sort this index.
 
 ```
 ::dbsort | fld 'db -- ;
@@ -86,7 +84,7 @@ For sort in diferents type of registers
 ::dbsortdate | fld 'db --
 ```
 
-For Filter
+For Filter, again, over the index array.
 
 ```
 ::dbfilterv | 'que 'db --
