@@ -55,6 +55,8 @@ Keep it simple, this is the main path, but simple is not easy, is a search in th
 
 [Landscape](doc/landscape.md)
 
+[More about Registers](doc/registers.md)
+
 ## Current development
 
 The current development in computers is dominated by certain ideas that in my opinion are wrong.
