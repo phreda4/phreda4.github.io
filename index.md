@@ -4,9 +4,9 @@
 
 :r4 is a language derived from ColorForth created in 2005.
 As all Forth is Minimalist, it does not need complex mechanisms of abstraction, in fact the only means of abstraction is the adress.
-Forth is not popular these days but curiously does not die, every programmer of forth knows why.
+Forth is not popular these days but curiously does not die, every programmer of forther knows why.
 
-<img src="img/simpleshoot.gif">
+<img src="gif/debugcode.gif" width=512>
 
 ## Idea
 
@@ -45,7 +45,7 @@ The main diccionary has a basic interaction with the OS, 12 words, very basic. T
 * Is easy port to other OS or embebed in a boot image. No OS !
 * The compiler only need code this 12 words for comunicate with the OS.
 
-The cons is not have full access to hard, for now!, you or my can modify this in any moment.
+The cons is not have full access to hard, for now!, we can modify this in any moment.
 
 Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedded,but the idea is avoid this and in some point, recreate in :r4, the graphics words are already recreate for the actual compiler.
 
@@ -63,7 +63,7 @@ The current development in computers is dominated by certain ideas that in my op
 
 The idea of using complex structures to simplify development only makes the problem worse. In addition to hiding certain parts of the problem that should be exposed to see the solution correctly.
 
-The idea of defensive programming by calling a lawyer and making it clear that it can be done and not done, even before writing a single calculation, now instead of having an algorithm, we have an algorithm and a lawyer.
+The idea of defensive programming by calling a lawyer and making it clear that it can be done and not done, even before writing a single calculation, then now instead of having an algorithm, we have an algorithm and a lawyer.
 
 Many good programming practices are wrong, since you try to find a generality in the development and the systems solve a unique problem, not a different set of problems. Charles Moore say, real programs execute in real computers.
 

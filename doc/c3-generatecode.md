@@ -12,7 +12,7 @@ There are a basic code generator, very simple. Every basic word can be translate
 
 This compilers make a unoptimized code, very dumb but work.
 
-The compiler generate code for add to a simple framework, this create a graphic windows andd keep track about event in the windows OS, the keyboard, the mouse and some inteface to API calls.
+The compiler generate code for add to a simple framework, this create a graphic windows and keep track about event in the windows OS, the keyboard, the mouse and some interface to API calls.
 
 The data stack is simulated, EAX is the value of top os stack, the stack is in memory in DATASTK definition, EBP point to next to data stack.
 
@@ -34,7 +34,7 @@ The key concept is simulate the stack with registers, is some cases the stack di
 
 ## Cell information
 
-The first stage is the same of unoptimiced code, but change when generate code for every word.
+The first stage is the same of unoptimized code, but change when generate code for every word.
 
 We perform the cell analysis in `compiler/r4-cellana.txt` code. This word fill some arrays with information of execution.
 
@@ -56,7 +56,7 @@ Stack information, what cell used in every word of definition in:
 
 The main idea is collect information of cells, who cell is static (only read), who cell is used in calculus (arithmetic or logic operations), or in memory (access to memory for read or write), cell live segment and others.
 
-Example of sqrt code with coments, actual development:
+Example of sqrt code with comments, actual development:
 ```
 ; vreg:4
 ; IN: eax
@@ -148,17 +148,17 @@ lea eax,[ebx]
 ret
 ```
 
-The first block of info is: IN the registers in stack from input, the eax is the container. Next a list of blocks of code with the numbers of intrucctions. Next a list of cell used, with the quantity of reads (R) and writes (W), if is a constant a CTE, some other info, the life (from:to) and the virtual register. In this word, only with 3 register you can compile.
+The first block of info is: IN the registers in stack from input, the eax is the container. Next a list of blocks of code with the numbers of instructions. Next a list of cell used, with the quantity of reads (R) and writes (W), if is a constant a CTE, some other info, the life (from:to) and the virtual register. In this word, only with 3 register you can compile.
 
 Then the list of words with the current stack precalculate in previous analysis, and the stack in real values.
 
 The next block is the source token, the stack with number of cell and the real stack in this moment. The lines without ; is the code generated, the labels are global.
 
-If the numbers of virtual register is less of real and not have case of recursion or diferents cell in input or output stack, then only assign real registers to virtual ones produce good code.
+If the numbers of virtual register is less of real and not have case of recursion or different cell in input or output stack, then only assign real registers to virtual ones produce good code.
 
 ### Th Blocks
 
-The blocks of code are converted with conditional jumps, but with this schema, we have a more complex escenario, the stack representation need to be converted to the correct format for normal work. There are two flavors, with terminator ; or not
+The blocks of code are converted with conditional jumps, but with this schema, we have a more complex scenario, the stack representation need to be converted to the correct format for normal work. There are two flavors, with terminator ; or not
 
 #### IF
 
@@ -177,7 +177,7 @@ _JUMP:
 ; in this point the stack is the same like point (A)
 ```
 
-take note for the contruction:
+take note for the construction:
 
 ```
 1? ( worda ; ) wordb
@@ -191,7 +191,7 @@ _JUMP:
 ; stack same in (A)
 ```
 
-is a IF-ELSE, the wonderfull colorforth not have else for this construct!, really is good to think if you need the ELSE part, this construction increase the factorization of code.
+is a IF-ELSE, the wonderful colorforth not have else for this construct!, really is good to think if you need the ELSE part, this construction increase the factorization of code.
 
 #### IF-ELSE
 
@@ -211,11 +211,11 @@ _ENDIF:
 ```
 
 See when need normalize to a same stack representation, no matter how is this representation, can be registers or real stack.
-This normalizations is the key to generate code for avoid real stack operation, if you normaliza to one form in every of this point and before every call, you generate code ok but not optimal.
+This normalizations is the key to generate code for avoid real stack operation, if you normalize to one form in every of this point and before every call, you generate code ok but not optimal.
 
 #### WHILE
 
-The most versatile and powerful execution flow construction. When I start define r4 I think a lot how implement the FOR construction, when start code with this WHILE, the FOR disapear, very elegant and complete. Don't force the first part to one word!.
+The most versatile and powerful execution flow construction. When I start define r4 I think a lot how implement the FOR construction, when start code with this WHILE, the FOR disappear, very elegant and complete. Don't force the first part to one word!.
 The code generate can avoid a jump with some modification.
 
 ```
@@ -232,7 +232,7 @@ _INWHILE:
 	jmp _INWHILE
 _ENDWHILE:
 
-; and more eficcient (one jmp less in inner loop)
+; and more efficient (one jmp less in inner loop)
 
 	jmp _INWHILE
 _LOOPWHILE:
@@ -262,7 +262,7 @@ _REPEAT:
 
 #### REPEAT
 
-The least used, olny can break for a return stack manipulation or system.
+The least used, only can break for a return stack manipulation or system.
 
 ```
 ( word )
