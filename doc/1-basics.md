@@ -191,6 +191,7 @@ The compound conditionals are
 >=?
 <>?
 AND?
+NAND?
 ```
 
 These conditionals must be stuck to the blocks

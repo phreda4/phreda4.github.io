@@ -60,3 +60,7 @@ The difficulty that this decision has is that the different distributions of the
 ```
 
 By default the key is spanish (my pc). You can change this comment line and use you keyboard distribution, if any key don't get the correct character, please send me a line or fix the map please, if you have another keyboard layout the same.
+
+## run in virtual machine
+
+When a code is compiled and have an error, the VM save the file `debug.err` in the root of r4, this file have the file, the number of line and the error found, if this file is created and not manage by main.txt the vm hang. Erase this file and exec again.
