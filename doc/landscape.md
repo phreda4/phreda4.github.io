@@ -20,7 +20,7 @@ The words are case insensitive, since it does not make sense to give different m
 
 Each definition hides the previously defined name, so the search for the words in the compiler is done from the end to the beginning. The other form of hidding is the declaration of local or exported, in the source code each inclusion only makes visible the words defined with `::` or `#:`, the other are invisible.
 
-I also think that the problem of name pollination is overdimensioned, in fact when you define auxiliary names for a main word, you prefer to put short names and save the meaningful names to the keywords of the program.
+I also think that the problem of name pollution is overdimensioned, in fact when you define auxiliary names for a main word, you prefer to put short names and save the meaningful names to the keywords of the program.
 
 It is a headache to redefine the basic word, today this is not proven but desirable an indication of the duplication of the name. The code debugger detect this collision in names.
 
@@ -39,6 +39,8 @@ and then dynamically
 ```
 #buffer
 
+mark | <-- init here with free memory start
+..
 here 'buffer!
 1024 'here +!
 ```
@@ -54,3 +56,7 @@ You always have to define how much I will use for each thing, if I need more I w
 The conection with the OS is minimal, a flat access to video framebuffer, the raw scancode from keyboard and access to mouse (the android version work with 5 fingers).
 
 In some point, I try to make a booteable system, but the technology change and today, the web browser is the new OS, perhaps have more sense make a webassembly compiler and/or a web server with :r4.
+
+## The future is r3
+
+I found a more simple version of control structures, sometimes I see generate some confusion the work )(, I remove this word and use a simpler logic for diferentiate WHILE for IF, and remove other constrction, I refuse to make a interpreter and I still make a compiler for this.

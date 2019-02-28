@@ -3,10 +3,10 @@
 ## Source
 
 :r4 is a language derived from ColorForth created in 2005.
-As all Forth is Minimalist, it does not need complex mechanisms of abstraction, in fact the only means of abstraction is the adress.
+As all Forth is Minimalist, it does not need complex mechanisms of abstraction, in fact the only mechanism of abstraction is the adress.
 Forth is not popular these days but curiously does not die, every programmer of forther knows why.
 
-<img src="gif/debugcode.gif" width=512>
+<img src="./gif/debugcode.gif">
 
 ## Idea
 

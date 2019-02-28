@@ -1,6 +1,6 @@
 # Main Dicctionary.
 
-The Language start with this words defined, in top of this you can define new word until the system is done.
+The Language start with this words defined, in top of this you can define new word until you program is done.
 
 ## Stack Manipulation Words
 ```
@@ -25,7 +25,7 @@ ROT 	| a b c -- b c a
 ```
 (	| Start Block
 )	| End Block
-)(  | Separator Block
+)(  | Separator Block, see carrefuly, not space between )(
 
 [	| Start anonymous definition
 ]	| End anonymous definition leave direction on stack
