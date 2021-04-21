@@ -35,11 +35,11 @@ A program has two types of words: actions and data (time and space). To define a
 
 When you define a word, you can use previously defined words, or the current word for recursive words.
 
-When start a program, the diccionary have basic definitions:
+When start a program, the dictionary have basic definitions:
 
-[Main Diccionary](doc/main-dicc.md)
+[Main Dictionary](doc/main-dict.md)
 
-The main diccionary has a basic interaction with the OS, 12 words, very basic. This aproach has some advantages over recreate all the API calls.
+The main dictionary has a basic interaction with the OS, 12 words, very basic. This aproach has some advantages over recreate all the API calls.
 
 * Not deal with deprecate and diferent behavior in versions.
 * Is easy port to other OS or embebed in a boot image. No OS !
