@@ -12,10 +12,10 @@ Forth isn't as popular these days, but curiously does not die. Every Forth progr
 
 The idea is simple:
 ```
-* Any number in source code go to the data stack.
-* Any adress of word is stack too.
-* Any word (characters separate by spaces) search in dictionary,
-  +	If is found execute the word.
+* Any number in the source code goes directly to the data stack.
+* Any adress of a word goes to the stack too.
+* Any word (characters separate by spaces) searches in the dictionary,
+  +	If it is found, execute the word.
   +	Else is an error, stop compilation!!
 ```
 
