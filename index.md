@@ -16,12 +16,12 @@ The idea is simple:
 * Any adress of a word goes to the stack too.
 * Any word (characters separate by spaces) searches in the dictionary,
   +	If it is found, execute the word.
-  +	Else is an error, stop compilation!!
+  +	Else is an error, stop the compilation!!
 ```
 
 Unlike ColorForth, the meaning of words is defined by prefixes.
-the most importan is ' (adressof) then *word* execute a word, and *'word* is the adress of word.
-This adress is a powerfull abstraction, many languajes try to avoid this, but here we recommend its use.
+The most important prefix is `'` (adressof). If `word` executes a word, then `'word` is the adress of the word.
+This adress prefix is a powerfull abstraction, many languages try to avoid this, but here we recommend its use.
 
 For make a program you need define yours words to express the algorithm that tries to solve the problem to be programmed.
 
