@@ -2,9 +2,9 @@
 
 ## Source
 
-:r4 is a language derived from ColorForth created in 2005.
-As all Forth is Minimalist, it does not need complex mechanisms of abstraction, in fact the only mechanism of abstraction is the adress.
-Forth is not popular these days but curiously does not die, every programmer of forther knows why.
+:r4 is a language created in 2005, based on ColorForth. 
+Since all Forths are Minimalist, :r4 does not need complex mechanisms of abstraction, in fact the only mechanism of abstraction is the adress.
+Forth isn't as popular these days, but curiously does not die. Every Forth programmer knows why.
 
 <img src="./gif/debugcode.gif">
 
