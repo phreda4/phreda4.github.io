@@ -1,10 +1,10 @@
-# :r4 programing languaje
+# :r4 programing language
 
 ## Source
 
-:r4 is a language derived from ColorForth created in 2005.
-As all Forth is Minimalist, it does not need complex mechanisms of abstraction, in fact the only mechanism of abstraction is the adress.
-Forth is not popular these days but curiously does not die, every programmer of forther knows why.
+:r4 is a language created in 2005, based on ColorForth. 
+Since all Forths are minimalistic, :r4 does not need complex mechanisms of abstraction, in fact the only mechanism of abstraction is the address.
+Forth isn't as popular these days, but curiously does not die. Every Forth programmer knows why.
 
 <img src="./gif/debugcode.gif">
 
@@ -12,20 +12,20 @@ Forth is not popular these days but curiously does not die, every programmer of 
 
 The idea is simple:
 ```
-* Any number in source code go to the data stack.
-* Any adress of word is stack too.
-* Any word (characters separate by spaces) search in dictionary,
-  +	If is found execute the word.
-  +	Else is an error, stop compilation!!
+* Any number in the source code goes directly to the data stack.
+* Any address of a word goes to the stack too.
+* Any word (characters separate by spaces) searches in the dictionary,
+  +	If it is found, execute the word.
+  +	Else is an error, stop the compilation!!
 ```
 
 Unlike ColorForth, the meaning of words is defined by prefixes.
-the most importan is ' (adressof) then *word* execute a word, and *'word* is the adress of word.
-This adress is a powerfull abstraction, many languajes try to avoid this, but here we recommend its use.
+The most important prefix is `'` (adressof). If `word` executes a word, then `'word` is the address of the word.
+This address prefix is a powerful abstraction, many languages try to avoid this, but here we recommend its use.
 
-For make a program you need define yours words to express the algorithm that tries to solve the problem to be programmed.
+To create a program, you need to define words that express an algorithm that tries to solve the problem that is being solved.
 
-A program have two types of words, actions and data, time and space. For define an action :r4 use the prefix : and to define data the prefix #
+A program has two types of words: actions and data (time and space). To define an action :r4 uses the prefix `:` and to define data the prefix `#`
 
 ```
 :thiswordisanaction 1 2 3 + * ;
@@ -33,25 +33,25 @@ A program have two types of words, actions and data, time and space. For define 
 #thisisdata 33
 ```
 
-When you define a word, only you can use a word previous defined, or current definition for recursive words.
+When you define a word, you can use previously defined words, or the current word for recursive words.
 
-When start a program, the diccionary have basic definitions:
+When you start a program, the dictionary has the following basic definitions:
 
-[Main Diccionary](doc/main-dicc.md)
+[Main Dictionary](doc/main-dict.md)
 
-The main diccionary has a basic interaction with the OS, 12 words, very basic. This aproach has some advantages over recreate all the API calls.
+The main dictionary has a basic interaction with the OS, 12 words, which is very basic. This approach has some advantages over trying to recreate all the API calls.
 
-* Not deal with deprecate and diferent behavior in versions.
-* Is easy port to other OS or embebed in a boot image. No OS !
-* The compiler only need code this 12 words for comunicate with the OS.
+* Not deal with deprecate and different behavior in versions.
+* It is easy to port to other OS or embed in a boot image. No OS required!
+* The compiler only needs these 12 words to communicate with the OS.
 
-The cons is not have full access to hard, for now!, we can modify this in any moment.
+The cons is not having full access to hardware, for now!, we can modify this at any moment.
 
-Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular nedded,but the idea is avoid this and in some point, recreate in :r4, the graphics words are already recreate for the actual compiler.
+Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular needs, but the idea is to avoid this and at some point, recreate in :r4, the graphics words are already recreate for the actual compiler.
 
 Keep it simple, this is the main path, but simple is not easy, is a search in the world of problem for extract or ideate a correct and basic solution.
 
-## A more advanced introducction
+## A more advanced introduction
 
 [Landscape](doc/landscape.md)
 
