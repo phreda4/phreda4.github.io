@@ -23,9 +23,9 @@ Unlike ColorForth, the meaning of words is defined by prefixes.
 The most important prefix is `'` (adressof). If `word` executes a word, then `'word` is the adress of the word.
 This adress prefix is a powerfull abstraction, many languages try to avoid this, but here we recommend its use.
 
-For make a program you need define yours words to express the algorithm that tries to solve the problem to be programmed.
+To create a program, you need to define words that express the algorithm that tries to solve the problem that is being solved.
 
-A program have two types of words, actions and data, time and space. For define an action :r4 use the prefix : and to define data the prefix #
+A program has two types of words: actions and data (time and space). To define an action :r4 uses the prefix `:` and to define data the prefix `#`
 
 ```
 :thiswordisanaction 1 2 3 + * ;
@@ -33,7 +33,7 @@ A program have two types of words, actions and data, time and space. For define 
 #thisisdata 33
 ```
 
-When you define a word, only you can use a word previous defined, or current definition for recursive words.
+When you define a word, you can use previously defined words, or the current word for recursive words.
 
 When start a program, the diccionary have basic definitions:
 
