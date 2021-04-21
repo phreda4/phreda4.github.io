@@ -3,7 +3,7 @@
 ## Source
 
 :r4 is a language created in 2005, based on ColorForth. 
-Since all Forths are Minimalist, :r4 does not need complex mechanisms of abstraction, in fact the only mechanism of abstraction is the address.
+Since all Forths are minimalistic, :r4 does not need complex mechanisms of abstraction, in fact the only mechanism of abstraction is the address.
 Forth isn't as popular these days, but curiously does not die. Every Forth programmer knows why.
 
 <img src="./gif/debugcode.gif">
@@ -42,10 +42,10 @@ When you start a program, the dictionary has the following basic definitions:
 The main dictionary has a basic interaction with the OS, 12 words, which is very basic. This approach has some advantages over trying to recreate all the API calls.
 
 * Not deal with deprecate and different behavior in versions.
-* Is easy port to other OS or embedded in a boot image. No OS !
+* It is easy to port to other OS or embed in a boot image. No OS required!
 * The compiler only needs these 12 words to communicate with the OS.
 
-The cons is not have full access to hard, for now!, we can modify this in any moment.
+The cons is not having full access to hardware, for now!, we can modify this at any moment.
 
 Words for SOUND, PRINTER, JOYSTICK and WEB has a definition for particular needs, but the idea is to avoid this and at some point, recreate in :r4, the graphics words are already recreate for the actual compiler.
 
