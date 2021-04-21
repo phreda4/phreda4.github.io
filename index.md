@@ -1,4 +1,4 @@
-# :r4 programing languaje
+# :r4 programing language
 
 ## Source
 
@@ -23,7 +23,7 @@ Unlike ColorForth, the meaning of words is defined by prefixes.
 The most important prefix is `'` (adressof). If `word` executes a word, then `'word` is the adress of the word.
 This adress prefix is a powerfull abstraction, many languages try to avoid this, but here we recommend its use.
 
-To create a program, you need to define words that express the algorithm that tries to solve the problem that is being solved.
+To create a program, you need to define words that express an algorithm that tries to solve the problem that is being solved.
 
 A program has two types of words: actions and data (time and space). To define an action :r4 uses the prefix `:` and to define data the prefix `#`
 
@@ -35,11 +35,11 @@ A program has two types of words: actions and data (time and space). To define a
 
 When you define a word, you can use previously defined words, or the current word for recursive words.
 
-When start a program, the dictionary have basic definitions:
+When you start a program, the dictionary has the following basic definitions:
 
 [Main Dictionary](doc/main-dict.md)
 
-The main dictionary has a basic interaction with the OS, 12 words, very basic. This aproach has some advantages over recreate all the API calls.
+The main dictionary has a basic interaction with the OS, 12 words, which is very basic. This aproach has some advantages over trying to recreate all the API calls.
 
 * Not deal with deprecate and diferent behavior in versions.
 * Is easy port to other OS or embebed in a boot image. No OS !
