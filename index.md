@@ -37,7 +37,7 @@ When you define a word, you can use previously defined words, or the current wor
 
 When you start a program, the dictionary has the following basic definitions:
 
-[Main Dictionary](doc/main-dict.md)
+[Main Dictionary](doc/main-dicc.md)
 
 The main dictionary has a basic interaction with the OS, 12 words, which is very basic. This approach has some advantages over trying to recreate all the API calls.
 
